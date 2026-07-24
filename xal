@@ -1,0 +1,77 @@
+function loadPanel(title, content) {
+  const workspace = document.querySelector('.workspace');
+  workspace.innerHTML = `
+    <div class="tool-panel">
+      <h3>${title}</h3>
+      ${content}
+    </div>
+  `;
+}
+
+document.querySelector('.tool:nth-child(1)').addEventListener('click', () => {
+  loadPanel("Style Transform", `
+    <p>Select a style:</p>
+    <button class="subtool">Cartoon</button>
+    <button class="subtool">Game</button>
+    <button class="subtool">Movie</button>
+    <button class="subtool">TV</button>
+  `);
+});
+
+document.querySelector('.tool:nth-child(2)').addEventListener('click', () => {
+  loadPanel("Costume Swap", `
+    <p>Upload a character image:</p>
+    <input type="file" accept="image/*">
+    <p>Select a costume:</p>
+    <button class="subtool">Hero Suit</button>
+    <button class="subtool">Villain Suit</button>
+    <button class="subtool">Casual Outfit</button>
+    <button class="subtool">Armor</button>
+  `);
+});
+
+document.querySelector('.tool:nth-child(3)').addEventListener('click', () => {
+  loadPanel("Tribute Mode", `
+    <p>Choose a tribute type:</p>
+    <button class="subtool">Character Tribute</button>
+    <button class="subtool">Creator Tribute</button>
+    <button class="subtool">Voice Actor Tribute</button>
+
+    <p>Examples:</p>
+    <ul>
+      <li>For example: Sonic the Hedgehog.</li>
+      <li>For example: Mario.</li>
+      <li>For example: a voice actor you admire.</li>
+    </ul>
+  `);
+});
+
+document.querySelector('.tool:nth-child(4)').addEventListener('click', () => {
+  loadPanel("Import Hub", `
+    <p>Import your media:</p>
+    <input type="file" accept="video/*,image/*,.pdf">
+    <p>Paste a link:</p>
+    <input type="text" placeholder="YouTube, PDF, DeviantArt, FurAffinity">
+  `);
+});
+
+document.querySelector('.tool:nth-child(5)').addEventListener('click', () => {
+  loadPanel("Fan‑Fiction Visualizer", `
+    <p>Paste your story:</p>
+    <textarea placeholder="Paste your fan‑fiction text here"></textarea>
+    <button class="subtool">Visualize</button>
+  `);
+});
+
+document.querySelector('.tool:nth-child(6)').addEventListener('click', () => {
+  loadPanel("Frame‑by‑Frame Editor", `
+    <p>Add frames:</p>
+    <button class="subtool">Add Frame</button>
+    <button class="subtool">Delete Frame</button>
+    <button class="subtool">Play</button>
+
+    <div class="timeline">
+      <p>No frames yet.</p>
+    </div>
+  `);
+});
